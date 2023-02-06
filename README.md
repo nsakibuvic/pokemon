@@ -1,10 +1,10 @@
 # Things Completed:
 
-Fetched pokemon data with fetch api. 
-Displaying each Pokemon as a card. 
-The card is part of a grid. 
-When clicked on the pokemon it opens an info panel.
-The display is optimsed for mobile and desktop viewing.
+Fetched pokemon data with fetch api.\ 
+Displaying each Pokemon as a card.\ 
+The card is part of a grid.\ 
+When clicked on the pokemon it opens an info panel.\
+The display is optimsed for mobile and desktop viewing.\
 
 
 # Getting Started with Create React App
