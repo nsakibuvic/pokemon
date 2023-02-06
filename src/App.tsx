@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { ImageGrid } from "./pokemon/ImageGrid";
 import { PokemonData } from "../src/pokemon/ImageGrid";
+import { InfoPanel } from "./infopanel/Infopanel";
 
 function App() {
 	let offset = 0;
 	const [pokemonData, setPokemonData] = useState<PokemonData[]>([]);
+	const [infoPanelData, setInfoPanelData] = useState<PokemonData[] | []>([]);
 
 	const fetchMoreData = async () => {		
 
@@ -44,11 +46,27 @@ function App() {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
-	const receivedNameHandler = (id: string) => {};
+	const receivedIdHandler = (id: string ) => {		
+		const filteredData = pokemonData.filter((item) => item.uniqueID === id);
+		setInfoPanelData(filteredData);
+	  };
+
+	  console.log(infoPanelData)
+	
+	  const filteredPanelData = infoPanelData?.map((data: PokemonData) => (
+		<InfoPanel
+		  key={data.uniqueID}
+		  id={data.uniqueID}
+		  name={data.name}		  
+		  height= {data!.height}
+		  abilities={data.abilities}		  
+		/>
+	  ));
 
 	return (
 		<>
-			<ImageGrid pokemonData={pokemonData} onReceiveId={receivedNameHandler} />
+			<ImageGrid pokemonData={pokemonData} onReceiveId={receivedIdHandler} />
+			{filteredPanelData}
 		</>
 	);
 }

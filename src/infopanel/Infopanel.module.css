@@ -1,0 +1,40 @@
+.panel {
+	background: #eee9da;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	bottom: 0;
+	padding: 0px 25px 40px;
+	position: absolute;
+	right: 0;
+	top: 20px;
+	width: 480px;
+}
+
+.panel li {
+	list-style: disc;
+}
+
+.heading {
+	font-weight: bold;
+	font-size: 35px;
+	margin: 10px 0 25px;
+	padding: 0;
+	text-align: center;
+	color: #913175;
+}
+
+.title {
+	font-weight: bold;
+	margin: 0 0 5px;
+	color: #a61f69;
+}
+
+.details {
+	color: #666;
+	margin: 0;
+	padding: 0;
+	color: #00425a;
+}
+
+.details + .title {
+	margin-top: 25px;
+}

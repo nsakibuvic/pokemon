@@ -8,13 +8,22 @@ export type PokemonData = {
 	name?: string;
 	url?: string | undefined;
 	id?: string;
-    uniqueID?: string;
+	uniqueID?: string;
 	sprites?: {
 		back_default: string;
 		front_shiny: string;
 	};
+	abilities?: [
+		{
+			ability: {
+				name: string;
+				url: string;
+			};
+		}
+	];
+	height?: string;
 	onReceiveId: (id: string) => void;
-    clickedCard: boolean;
+	clickedCard: boolean;
 };
 
 export type ImageGridProps = {
@@ -23,21 +32,21 @@ export type ImageGridProps = {
 };
 
 export const ImageGrid = (props: ImageGridProps) => {
-    const [storedId, setStoredId] = useState('')
+	const [storedId, setStoredId] = useState("");
 	const sendIdHandler = (id: string) => {
 		props.onReceiveId(id!);
-        setStoredId(id!)
+		setStoredId(id!);
 	};
 	const imagesFromBlock = props.pokemonData.map((item: PokemonData) => {
 		return (
 			<ImageWithText
 				key={item.uniqueID}
-                id={item.uniqueID}
+				id={item.uniqueID}
 				alt={item.name}
 				name={item.name}
 				src={item!.sprites!.front_shiny}
 				onReceiveId={sendIdHandler}
-                clickedCard = {item.uniqueID === storedId}
+				clickedCard={item.uniqueID === storedId}
 			/>
 		);
 	});
