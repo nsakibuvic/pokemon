@@ -1,4 +1,5 @@
-import styles from './Infopanel.module.css'
+import styles from './Infopanel.module.css';
+import {CapitalizeFirstLetter} from '../ui/CapitalizeFirstLetter'
 
 type InfoPanelProps = {
 	id?: string;
@@ -27,7 +28,7 @@ export const InfoPanel = (props: InfoPanelProps) => {
 				<dd className={styles.details}>{props.id}</dd>
 
 				<dt className={styles.title}>Name:</dt>
-				<dd className={styles.details}>{props.name}</dd>
+				<dd className={styles.details}>{CapitalizeFirstLetter(props.name!)}</dd>
 
 				<dt className={styles.title}>Height:</dt>
 				<dd className={styles.details}>{props.height}</dd>

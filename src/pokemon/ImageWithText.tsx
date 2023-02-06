@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./ImageWithText.module.css";
 import { PokemonData } from "./ImageGrid";
+import { CapitalizeFirstLetter } from "../ui/CapitalizeFirstLetter";
 
 export default function ImageWithText(props: PokemonData) {
 	const cardClickedHandler = () => {
@@ -12,7 +13,7 @@ export default function ImageWithText(props: PokemonData) {
 	return (
 		<div className={updatedCardClass} onClick={cardClickedHandler}>
 			<img src={props.src} alt={props.alt} />
-			<div className={styles.card_title}>{props.name}</div>
+			<div className={styles.card_title}>{CapitalizeFirstLetter(props.name!)}</div>
 		</div>
 	);
 }
