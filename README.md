@@ -1,14 +1,16 @@
 # Things Completed:
 
-Fetched pokemon data with fetch api.
+Fetched pokemon data with Custom API Hook.
 
-Displaying each Pokemon as a card. 
+Displayed each Pokemon as a card which is reusable. 
 
-The card is part of a grid.
+The card is part of a grid also reusable.
 
-When clicked on the pokemon it opens an info panel.
+When clicked on the pokemon it opens an info-panel.
 
 The display is optimsed for mobile and desktop viewing.
+
+Inserted Logo and a custom Favicon. 
 
 
 # Getting Started with Create React App
