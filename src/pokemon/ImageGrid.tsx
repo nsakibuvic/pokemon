@@ -1,6 +1,6 @@
-import styles from "./ImageGrid.module.css";
 import { useState } from "react";
 import ImageWithText from "./ImageWithText";
+import CardGrid from "../ui/CardGrid";
 
 export type PokemonData = {
 	src?: string;
@@ -13,16 +13,19 @@ export type PokemonData = {
 		back_default: string;
 		front_shiny: string;
 	};
-	abilities?: [
-		{
-			ability: {
-				name: string;
-				url: string;
-			};
-		}
-	];
+	abilities?: {
+		ability: {
+			name: string;
+			url: string;
+		};
+	}[];
+	forms?: {
+		name: string;
+		url: string;
+	}[];
 	height?: string;
-    results?: PokemonData [],
+	weight?: string;
+	results?: PokemonData[];
 	onReceiveId: (id: string) => void;
 	clickedCard: boolean;
 };
@@ -51,5 +54,5 @@ export const ImageGrid = (props: ImageGridProps) => {
 			/>
 		);
 	});
-	return <div className={styles.imageGrid}>{imagesFromBlock}</div>;
+	return <CardGrid>{imagesFromBlock}</CardGrid>;
 };

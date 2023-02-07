@@ -1,0 +1,28 @@
+.card {
+	display: "flex";
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	position: relative;
+	width: 300px;
+	height: 360px;
+	margin: 16px;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #D9ACF5;
+}
+
+.card img {
+	width: 100%;
+	max-height: 80%;
+	object-fit: cover;
+	image-rendering: optimizeQuality;
+}
+
+@media (max-width: 576px) {
+	.card {
+		width: 90vw;
+		height: auto;
+	}
+}

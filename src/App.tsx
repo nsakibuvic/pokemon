@@ -57,7 +57,9 @@ function App() {
 			id={data.uniqueID}
 			name={data.name}
 			height={data!.height}
+			weight= {data.weight}
 			abilities={data.abilities}
+			forms={data.forms}
 		/>
 	));
 

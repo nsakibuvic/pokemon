@@ -1,28 +1,31 @@
-import styles from './Infopanel.module.css';
-import {CapitalizeFirstLetter} from '../ui/CapitalizeFirstLetter'
+import styles from "./Infopanel.module.css";
+import { CapitalizeFirstLetter } from "../ui/CapitalizeFirstLetter";
 
 type InfoPanelProps = {
 	id?: string;
-    name?: string
-	abilities?: [
-		{
-			ability?: {
-				name?: string;
-				url?: string;
-			};
-		}
-	];
+	name?: string;
+	abilities?: {
+		ability?: {
+			name?: string;
+			url?: string;
+		};
+	}[];
+	forms?: {
+		name: string;
+		url: string;
+	}[];
 	height?: string;
+	weight?: string;
 };
 
-export const InfoPanel = (props: InfoPanelProps) => {	
+export const InfoPanel = (props: InfoPanelProps) => {
 	if (!props.id) {
 		return <aside className={styles.panel}></aside>;
 	}
 
 	return (
 		<aside className={styles.panel}>
-			<h2 className={styles.heading}>Pokemon info</h2>
+			<h2 className={styles.heading}>Pokemon Info</h2>
 			<dl>
 				<dt className={styles.title}>ID:</dt>
 				<dd className={styles.details}>{props.id}</dd>
@@ -33,10 +36,25 @@ export const InfoPanel = (props: InfoPanelProps) => {
 				<dt className={styles.title}>Height:</dt>
 				<dd className={styles.details}>{props.height}</dd>
 
+				<dt className={styles.title}>Weight:</dt>
+				<dd className={styles.details}>{props.weight}</dd>
+
 				<dt className={styles.title}>Abilities:</dt>
-				<dd className={styles.details}>{props.abilities?.map(item => <ul>
-                    <li>{item.ability?.name}</li>
-                </ul>)}</dd>
+				<dd className={styles.details}>
+					{props.abilities?.map((item) => (
+						<ul>
+							<li>{item.ability?.name}</li>
+						</ul>
+					))}
+				</dd>
+				<dt className={styles.title}>Forms:</dt>
+				<dd className={styles.details}>
+					{props.forms?.map((item) => (
+						<ul>
+							<li>{item?.name}</li>
+						</ul>
+					))}
+				</dd>
 			</dl>
 		</aside>
 	);
