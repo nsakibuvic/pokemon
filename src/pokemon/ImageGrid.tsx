@@ -22,6 +22,7 @@ export type PokemonData = {
 		}
 	];
 	height?: string;
+    results?: PokemonData [],
 	onReceiveId: (id: string) => void;
 	clickedCard: boolean;
 };
