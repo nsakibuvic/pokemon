@@ -1,0 +1,33 @@
+.heading {        
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;    
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2C74B3;    
+    margin-left: 300px;
+}
+
+.logo {
+    width: 5%; 
+    margin-left: 20px;  
+}
+
+@media (max-width: 576px) {
+	.heading {
+       text-align: center;       
+    }
+    .title {
+        font-size: 15px;          
+        margin-left: 10px;
+    }
+    .logo {
+        width: 15%; 
+        margin-left: 10px;  
+    }
+}
+

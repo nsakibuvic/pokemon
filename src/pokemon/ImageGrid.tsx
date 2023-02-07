@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ImageWithText from "./ImageWithText";
 import CardGrid from "../ui/CardGrid";
+import styles from './ImageGrid.module.css'
 
 export type PokemonData = {
 	src?: string;
@@ -54,5 +55,5 @@ export const ImageGrid = (props: ImageGridProps) => {
 			/>
 		);
 	});
-	return <CardGrid>{imagesFromBlock}</CardGrid>;
+	return <CardGrid className={styles.grid}>{imagesFromBlock}</CardGrid>;
 };

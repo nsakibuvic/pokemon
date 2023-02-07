@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Heading from "./heading/Heading";
 import { ImageGrid } from "./pokemon/ImageGrid";
 import { PokemonData } from "../src/pokemon/ImageGrid";
 import { InfoPanel } from "./infopanel/Infopanel";
 import useHttp from "./hooks/use-http";
 
-function App() {
-	let offset = 0;
+let offset = 0;
+
+function App() {	
 	const [pokemonData, setPokemonData] = useState<PokemonData[]>([]);
 	const [infoPanelData, setInfoPanelData] = useState<PokemonData[] | []>([]);
 
@@ -57,7 +59,7 @@ function App() {
 			id={data.uniqueID}
 			name={data.name}
 			height={data!.height}
-			weight= {data.weight}
+			weight={data.weight}
 			abilities={data.abilities}
 			forms={data.forms}
 		/>
@@ -65,6 +67,7 @@ function App() {
 
 	return (
 		<>
+			<Heading />
 			{isLoading && <p>Loading Pokemon Data...............</p>}
 			<ImageGrid pokemonData={pokemonData} onReceiveId={receivedIdHandler} />
 			{filteredPanelData}
