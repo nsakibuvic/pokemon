@@ -42,7 +42,7 @@ export const InfoPanel = (props: InfoPanelProps) => {
 				<dt className={styles.title}>Abilities:</dt>
 				<dd className={styles.details}>
 					{props.abilities?.map((item) => (
-						<ul>
+						<ul key={item.ability?.name}>
 							<li>{item.ability?.name}</li>
 						</ul>
 					))}
@@ -50,7 +50,7 @@ export const InfoPanel = (props: InfoPanelProps) => {
 				<dt className={styles.title}>Forms:</dt>
 				<dd className={styles.details}>
 					{props.forms?.map((item) => (
-						<ul>
+						<ul key={item.name}>
 							<li>{item?.name}</li>
 						</ul>
 					))}
