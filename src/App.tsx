@@ -47,7 +47,8 @@ function App() {
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
-
+    
+	console.log(pokemonData)
 	const receivedIdHandler = (id: string) => {
 		const filteredData = pokemonData.filter((item) => item.uniqueID === id);
 		setInfoPanelData(filteredData);
