@@ -52,7 +52,7 @@ function App() {
 		const filteredData = pokemonData.filter((item) => item.uniqueID === id);
 		setInfoPanelData(filteredData);
 	};
-    console.log(pokemonData)
+
 	const filteredPanelData = infoPanelData?.map((data: PokemonData) => (
 		<InfoPanel
 			key={data.uniqueID}
