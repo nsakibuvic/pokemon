@@ -6,9 +6,9 @@ import { PokemonData } from "../src/pokemon/ImageGrid";
 import { InfoPanel } from "./infopanel/Infopanel";
 import useHttp from "./hooks/use-http";
 
-let offset = 0;
+let offset = 20;
 
-function App() {	
+function App() {
 	const [pokemonData, setPokemonData] = useState<PokemonData[]>([]);
 	const [infoPanelData, setInfoPanelData] = useState<PokemonData[] | []>([]);
 
@@ -29,7 +29,7 @@ function App() {
 			})
 		);
 		setPokemonData((prevPokemons) => [...prevPokemons, ...individualPokemons]);
-		offset += 10;
+		offset += 20;
 	};
 
 	const handleScroll = (event: Event) => {
@@ -52,7 +52,7 @@ function App() {
 		const filteredData = pokemonData.filter((item) => item.uniqueID === id);
 		setInfoPanelData(filteredData);
 	};
-
+    console.log(pokemonData)
 	const filteredPanelData = infoPanelData?.map((data: PokemonData) => (
 		<InfoPanel
 			key={data.uniqueID}
